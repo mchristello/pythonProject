@@ -1,0 +1,9 @@
+setup.py
+mi_primer_paquete/__init__.py
+mi_primer_paquete/clients_db.json
+mi_primer_paquete/moduloClass.py
+mi_primer_paquete/moduloFx.py
+mi_primer_paquete.egg-info/PKG-INFO
+mi_primer_paquete.egg-info/SOURCES.txt
+mi_primer_paquete.egg-info/dependency_links.txt
+mi_primer_paquete.egg-info/top_level.txt

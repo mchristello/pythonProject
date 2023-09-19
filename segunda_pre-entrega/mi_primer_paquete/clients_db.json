@@ -1,0 +1,33 @@
+{
+    "clients": [
+        {
+            "name": "Matias",
+            "email": "m.christello@hotmail.com",
+            "adress": "Av Siempre Viva 777",
+            "orders": [],
+            "id": 1,
+            "lastSeen": "Thursday 24 Aug 2023, 09:19PM"
+        },
+        {
+            "name": "Bastian",
+            "email": "b.christello@gmail.com",
+            "adress": "Calle False 123",
+            "orders": [
+                {
+                    "product": "Notebook ASUS ZenBook i7 16gb",
+                    "price": 1200
+                }
+            ],
+            "id": 2,
+            "lastSeen": "Tuesday 29 Aug 2023, 04:05PM"
+        },
+        {
+            "name": "M Luz",
+            "email": "marialuzcastro90@gmail.com",
+            "adress": "Av Siempre viva 7",
+            "orders": [],
+            "id": 3,
+            "lastSeen": "Tuesday 29 Aug 2023, 10:45AM"
+        }
+    ]
+}
