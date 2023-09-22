@@ -55,8 +55,6 @@ def views_gym(request):
 
 # Vista de Busquedas
 def pokemon_search_result(request):
-    print(f"El pokemons buscado es: {request.GET['pokemon']}")
-    
     if request.GET['pokemon']:
         name = request.GET['pokemon']
         pokemon = Pokemon.objects.filter(name__icontains=name)

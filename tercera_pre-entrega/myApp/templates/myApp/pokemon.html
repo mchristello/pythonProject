@@ -9,17 +9,18 @@
 {% endblock %}
 
 {% block contenidoQueCambia %}
-    <h2 class="text-center">Acá se ven todos los Pokemons</h2>
 
-    <ul>
+<div class="d-flex justify-content-evenly">
+    <ul class="d-flex flex-column align-items-center m-5">
+        <h2 class="text-center">Acá se ven todos los Pokemons</h2>
         {% for pokemon in all_pokemons %}
 
-            <li>{{pokemon.name}} ---> {{pokemon.type}}</li>
+            <li>Name: {{pokemon.name}} ---> Type: {{pokemon.type}} || <button class="m-2 btn btn-outline-danger">Delete</button></li> 
 
         {% endfor %}
     </ul>
 
-    <section>
+    <section class="m-5">
         <div class="addItem--form">
             <h3>Add A Pokemon</h3>
     
@@ -33,10 +34,12 @@
                 <table>
                     {{ pokeform.as_table }}
                 </table>
-    
-                <button class="btn btn-block btn-success m-3" type="submit">Catch!</button>
+                <div class="d-grid gap-2 col-12 mx-auto mt-4">
+                    <button class="btn btn-block btn-success" type="submit">Catch!</button>
+                </div>
             </form>
         </div>
     </section>
+</div>
 
 {% endblock %}

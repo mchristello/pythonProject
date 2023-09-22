@@ -8,7 +8,8 @@
 
 {% block contenidoQueCambia %}
 
-    <h4>El pokemon buscado es: {{name}}</h4>
+<section class="d-flex flex-column align-items-center">
+    <h4 class="m-3">El pokemon buscado es: {{name}}</h4>
 
     {% if pokemon %}
 
@@ -21,6 +22,7 @@
     </ul>
 
     {% endif %}
+</section>
 
 {% endblock %}
 

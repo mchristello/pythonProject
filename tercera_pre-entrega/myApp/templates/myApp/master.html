@@ -8,32 +8,36 @@
 {% endblock %}
 
 {% block contenidoQueCambia %}
-<h2 class="text-center">Acá se ven todos los Maestros Pokemons!</h2>
 
-<ul>
-    {% for master in all_masters %}
-
-        <li>Name: {{master.name}} ---> Fav Type: {{master.favorite_type}}</li>
-
-    {% endfor %}
-</ul>
-
-<section class="addItem--form">
-    <h3>Add New Master or Trainer</h3>
-
-    {% if masterform.errors %}
-
-    <p>Please, check the info</p>
-
-    {% endif %}
-
-    <form action="" method="POST">{% csrf_token %}
-
-        <table>
-            {{ masterform.as_table }}
-        </table>
-        <button class="btn btn-block btn-outline-success" type="submit">Create</button>
-    </form>
-</section>   
+<div class="d-flex justify-content-evenly">
+    <ul class="d-flex flex-column align-items-center m-5">
+        <h2 class="text-center">Acá se ven todos los Maestros Pokemons!</h2>
+        {% for master in all_masters %}
+    
+            <li>Name: {{master.name}} ---> Fav Type: {{master.favorite_type}}</li>
+    
+        {% endfor %}
+    </ul>
+    
+    <section class="addItem--form m-5">
+        <h3>Add New Master or Trainer</h3>
+    
+        {% if masterform.errors %}
+    
+        <p>Please, check the info</p>
+    
+        {% endif %}
+    
+        <form action="" method="POST">{% csrf_token %}
+    
+            <table>
+                {{ masterform.as_table }}
+            </table>
+            <div class="d-grid gap-2 col-12 mx-auto mt-4">
+                <button class="btn btn-inline-block btn-success" type="submit">Create</button>
+            </div>
+        </form>
+    </section>   
+</div>
 
 {% endblock %}
