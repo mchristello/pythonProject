@@ -20,7 +20,7 @@ def views_pokemon(request):
             print(f'This is form info {info}')
             pokemon = Pokemon(name=info["name"], type=info["type"], attack=info["attack"])
             pokemon.save()
-            return render(request, 'myApp/pokemon.html')
+            return render(request, 'myApp/pokemon.html', {'all_pokemons': all_pokemons, 'pokeform': pokeform })
     else:
         pokeform = PokemonForm()
     return render(request, 'myApp/pokemon.html', {'all_pokemons': all_pokemons, 'pokeform': pokeform })
@@ -34,7 +34,7 @@ def views_master(request):
             info = masterform.cleaned_data
             master = Master(name=info['name'], lastname=info['lastname'], favorite_type=info['favorite_type'])
             master.save()
-            return render(request, 'myApp/home.html')
+            return render(request, 'myApp/home.html', {'all_masters': all_masters, 'masterform': masterform})
     else:
         masterform = MasterForm()
     return render(request, 'myApp/master.html', {'all_masters': all_masters, 'masterform': masterform})
@@ -48,7 +48,7 @@ def views_gym(request):
             info = gymform.cleaned_data
             gym = Gym(name=info['name'], type=info['type'], master=info['master'])
             gym.save()
-            return render(request, 'myApp/home.html')
+            return render(request, 'myApp/home.html', {'all_gyms': all_gyms, 'gymform': gymform })
     else:
         gymform = GymForm()
     return render(request, 'myApp/gym.html', {'all_gyms': all_gyms, 'gymform': gymform })
