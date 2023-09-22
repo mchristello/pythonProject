@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Rock+Salt&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&family=Syne+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mukta+Vaani:wght@400;700&family=Prompt:wght@400;700&family=Ropa+Sans&display=swap');
+
+/* font-family: 'Roboto', sans-serif; */
+/* font-family: 'Rock Salt', cursive; */
+/* font-family: 'Syne Mono', monospace; */
+/* font-family: 'Baloo 2', cursive; */
+/* font-family: 'Mukta Vaani', sans-serif; */
+/* font-family: 'Prompt', sans-serif; */
+/* font-family: 'Ropa Sans', sans-serif; */
+:root {
+    --color-primary: rgb(51, 42, 42);
+}
+
+#root {
+    font-family: 'Syne Mono', monospace;
+    line-height: 1.5;
+    font-weight: 400;
+    scroll-behavior: smooth;
+    color-scheme: light dark;
+    opacity: 0.8;
+    background: rgb(255, 255, 255);
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+}
+
+.underline_effect {
+    background:
+        linear-gradient(to right,
+            rgba(100, 200, 200, 1),
+            rgba(100, 200, 200, 1)),
+        linear-gradient(to right, rgba(255, 255, 255, 1) 10%, rgb(40, 193, 240) 25%, rgb(115, 247, 82) 50%, rgb(214, 200, 69) 65%, rgb(189, 49, 49) 80%, rgb(46, 18, 18) 100%);
+    background-size: 100% 3px, 0 3px;
+    background-position: 100% 100%, 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 500ms;
+    text-decoration: none;
+    color: var(--color-primary);
+}
+
+.underline_effect:hover {
+    background-size: 0 3px, 100% 3px;
+    color: rgb(5, 111, 138);
+}
+
+.navbar {
+    background: linear-gradient(90deg, #ffffff 10%, #28c1f0 25%, #73f752 40%, #d6c845 55%, #f884f8 75%, #bd3131 85%, #2e1212 100%) !important;
+    font-family: 'Baloo 2', cursive;
+    font-size: 1.2rem;
+}
+
+.navbar-brand {
+    font-family: 'Rock Salt', cursive;
+}
+
+nav ul li {
+    margin: 1rem 2rem;
+}
+
+nav ul li:hover {
+    backdrop-filter: blur(8px) saturate(100%);
+    background-color: rgba(17, 25, 40, 0.33);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+.header {
+    font-family: 'Syne Mono', monospace;
+    /* height: 100vh; */
+    border-bottom: 2px black;
+    margin-bottom: 5rem;
+}
+
+.main-background {
+    background: linear-gradient(90deg, #ffffff 10%, #28c1f0 25%, #73f752 40%, #d6c845 55%, #f884f8 75%, #bd3131 85%, #2e1212 100%);
+    height: 100vh;
+}
+
+.header__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.header-title {
+    font-size: 5em;
+    margin: 2rem auto;
+    color: var(--color-primary);
+}
+
+.header-arrow {
+    margin: 2rem auto;
+    width: 100vw;
+}
+
+.header-arrow a {
+    color: var(--color-primary);
+    font-size: 1.6rem;
+}
+
+.addItem--form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

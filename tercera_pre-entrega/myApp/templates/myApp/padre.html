@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+
+<html lang="es">
+    <head>
+        {% load static %}
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'myApp/css/style.css' %}">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <title>Matias Christello</title>
+    </head>
+    <body>
+
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand ms-5" href="{% url 'Home' %}">PokeApp</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex m-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{% url 'Home' %}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'Pokemon' %}">Pokemons</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'Master' %}">Trainers & Masters</a>
+                        </li><li class="nav-item">
+                            <a class="nav-link" href="{% url 'Gym' %}">Gyms</a>
+                        </li>
+
+                    </ul>
+                    <form class="d-flex me-5" role="search" action="/PokeApp/pokemon_search/" method="GET">
+                        <input class="form-control me-2" type="search" placeholder="Search For Pokemons" aria-label="Search" name="pokemon" id="pokemon">
+                        <button id="search-btn" class="btn btn-success" type="submit">PokeSearch</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    
+        <!-- Main Content -->
+        <main id="main" class="main main-background">
+
+
+            <!-- Header -->
+            <header class="header">
+                <div>
+                    <div class="header__content">
+                        {% block title %}
+    
+                        {% endblock %}
+    
+                        <div class="d-flex flex-direccion-row justify-content-evenly header-arrow">
+                            <!-- <a class="header-arrow" href="#main"><svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 48 48"><g fill="none" stroke-linejoin="round" stroke-width="4"><path fill="#2F88FF" stroke="#000" d="M24 44C35.0457 44 44 35.0457 44 24C44 12.9543 35.0457 4 24 4C12.9543 4 4 12.9543 4 24C4 35.0457 12.9543 44 24 44Z"/><path stroke="#fff" stroke-linecap="round" d="M33 21L24 30L15 21"/></g></svg></a> -->
+                            <a class="underline_effect" href="{% url 'Pokemon' %}">Go to Pokemon</a>
+                            <a class="underline_effect" href="{% url 'Master' %}">Go To Masters</a>
+                            <a class="underline_effect" href="{% url 'Gym' %}">Go to Gyms</a>
+                        </div>
+                    </div>
+
+                </div>
+            </header>
+
+            {% block contenidoQueCambia %}
+
+                <hr>
+                <hr>
+
+                {% block form %}
+
+                {% endblock %}
+
+            {% endblock %}
+
+        </main>
+
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+        </script>
+    </body>
+</html>

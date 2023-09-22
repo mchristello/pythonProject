@@ -1,0 +1,26 @@
+
+{% extends 'myApp/padre.html' %}
+{% load static %}
+
+{% block title %}
+    <h1 class="text-center header-title">Search Result!</h1>
+{% endblock %}
+
+{% block contenidoQueCambia %}
+
+    <h4>El pokemon buscado es: {{name}}</h4>
+
+    {% if pokemon %}
+
+    <ul>
+        {% for pokemon in pokemon %}
+            <li>Name: {{pokemon.name}}</li>
+            <li>Type: {{pokemon.type}}</li>
+            <li>Attack Power: {{pokemon.attack}}</li>
+        {% endfor %}
+    </ul>
+
+    {% endif %}
+
+{% endblock %}
+

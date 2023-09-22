@@ -1,0 +1,42 @@
+
+
+{% extends 'myApp/padre.html' %}
+
+{% load static %}
+
+{% block title %}
+    <h1 class="text-center header-title">Pokemons Contents</h1>
+{% endblock %}
+
+{% block contenidoQueCambia %}
+    <h2 class="text-center">Acá se ven todos los Pokemons</h2>
+
+    <ul>
+        {% for pokemon in all_pokemons %}
+
+            <li>{{pokemon.name}} ---> {{pokemon.type}}</li>
+
+        {% endfor %}
+    </ul>
+
+    <section>
+        <div class="addItem--form">
+            <h3>Add A Pokemon</h3>
+    
+            {% if pokeform.errors %}
+            
+            <p>Por favor, revisar los datos ingresados.</p>
+            
+            {% endif %}
+    
+            <form action="" method="POST" >{% csrf_token %}
+                <table>
+                    {{ pokeform.as_table }}
+                </table>
+    
+                <button class="btn btn-block btn-success m-3" type="submit">Catch!</button>
+            </form>
+        </div>
+    </section>
+
+{% endblock %}

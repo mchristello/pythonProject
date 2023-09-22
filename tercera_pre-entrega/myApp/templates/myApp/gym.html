@@ -1,0 +1,45 @@
+
+
+{% extends 'myApp/padre.html' %}
+{% load static %}
+
+{% block title %}
+<h1 class="text-center header-title">Gym Content</h1>
+{% endblock %}
+
+{% block contenidoQueCambia %}
+<h2 class="text-center">Acá se ven todos los Gimnasios.</h2>
+
+<ul>
+    {% for gym in all_gyms %}
+
+        <ul>Gym Name: {{gym.name}}
+            <li>Type: {{gym.type}}</li>
+            <li>Gym Leader: {{gym.master}}</li>
+            <!-- {% for pokemon in gym.pokemons %}
+                <li>{{pokemon}}</li>
+            {% endfor %} -->
+        </ul>
+
+    {% endfor %}
+</ul>
+
+<section class="addItem--form">
+    <h3>Add a Gym</h3>
+
+    {% if gymform.errors %}
+
+    <p>Please, check the info</p>
+
+    {% endif %}
+
+    <form action="" method="POST">{% csrf_token %}
+
+        <table>
+            {{ gymform.as_table }}
+        </table>
+        <button class="btn btn-block btn-success" type="submit">Create</button>
+    </form>
+</section> 
+
+{% endblock %}
