@@ -68,7 +68,6 @@ nav ul li:hover {
 
 .header {
     font-family: 'Syne Mono', monospace;
-    /* height: 100vh; */
     border-bottom: 2px black;
     margin-bottom: 5rem;
 }
@@ -100,8 +99,18 @@ nav ul li:hover {
     font-size: 1.6rem;
 }
 
+.form__container {
+    font-family: 'Prompt', sans-serif
+}
+
 .addItem--form {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.table-blur {
+    background-color: #ffffff66;
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
 }

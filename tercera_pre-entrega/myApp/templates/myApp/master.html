@@ -9,14 +9,29 @@
 
 {% block contenidoQueCambia %}
 
-<div class="d-flex justify-content-evenly">
+<div class="form__container justify-content-evenly">
     <ul class="d-flex flex-column align-items-center m-5">
         <h2 class="text-center">Acá se ven todos los Maestros Pokemons!</h2>
-        {% for master in all_masters %}
-    
-            <li>Name: {{master.name}} ---> Fav Type: {{master.favorite_type}}</li>
-    
-        {% endfor %}
+            <table class="table table-blur">
+                <thead>
+                    <tr>
+                        <th class="text-center">ID</th>
+                        <th class="text-center">Master Name</th>
+                        <th class="text-center">Lastname</th>
+                        <th class="text-center">Favorite Pokemon Type</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for master in all_masters %}
+                        <tr>
+                            <td class="mx-5 text-center">{{ master.id }}</td>
+                            <td class="mx-5 text-center">{{ master.name }}</td>
+                            <td class="mx-5 text-center">{{ master.lastname }}</td>
+                            <td class="mx-5 text-center">{{ master.favorite_type }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
     </ul>
     
     <section class="addItem--form m-5">

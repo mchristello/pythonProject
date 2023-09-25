@@ -9,20 +9,30 @@
 
 {% block contenidoQueCambia %}
 
-<div class="d-flex justify-content-evenly">
+<div class="form__container d-flex justify-content-evenly">
     <ul class="d-flex flex-column align-items-center m-5">
         <h2 class="text-center">Acá se ven todos los Gimnasios.</h2>
-        {% for gym in all_gyms %}
-    
-            <ul>Gym Name: {{gym.name}}
-                <li>Type: {{gym.type}}</li>
-                <li>Gym Leader: {{gym.master}}</li>
-                <!-- {% for pokemon in gym.pokemons %}
-                    <li>{{pokemon}}</li>
-                {% endfor %} -->
-            </ul>
-    
-        {% endfor %}
+        <table class="table table-blur">
+            <thead>
+                <tr>
+                    <th class="text-center">ID</th>
+                    <th class="text-center">Gym Name</th>
+                    <th class="text-center">Type</th>
+                    <th class="text-center">Gym Leader</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for gym in all_gyms %}
+                    <tr>
+                        <td class="mx-5 text-center">{{ gym.id }}</td>
+                        <td class="mx-5 text-center">{{ gym.name }}</td>
+                        <td class="mx-5 text-center">{{ gym.type }}</td>
+                        <td class="mx-5 text-center">{{ gym.master }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
     </ul>
     
     <section class="addItem--form m-5">

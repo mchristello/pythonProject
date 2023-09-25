@@ -10,15 +10,34 @@
 
 {% block contenidoQueCambia %}
 
-<div class="d-flex justify-content-evenly">
-    <ul class="d-flex flex-column align-items-center m-5">
+<div class="form__container d-flex justify-content-evenly">
+    <div class="d-flex flex-column align-items-center m-5">
         <h2 class="text-center">Acá se ven todos los Pokemons</h2>
-        {% for pokemon in all_pokemons %}
-
-            <li>Name: {{pokemon.name}} ---> Type: {{pokemon.type}} || <button class="m-2 btn btn-outline-danger">Delete</button></li> 
-
-        {% endfor %}
-    </ul>
+        <form action="" method="DELETE">{% csrf_token %}
+            <table class="table table-blur">
+                <thead>
+                    <tr>
+                        <th class="text-center">ID</th>
+                        <th class="text-center">Pokemon Name</th>
+                        <th class="text-center">Type</th>
+                        <th class="text-center">Attack Power</th>
+                        <th class="text-center">Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for pokemon in all_pokemons %}
+                        <tr>
+                            <td class="m-2 text-center">{{ pokemon.id }} </td>
+                            <td class="m-2 text-center">{{ pokemon.name }} </td>
+                            <td class="m-2 text-center">{{ pokemon.type }}</td>
+                            <td class="m-2 text-center">{{ pokemon.attack }}</td>
+                            <td class="m-2 text-center"><a class="btn btn-outline-danger" href="{% url 'DeletePokemon' pokemon.name %}">❌</a></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </form>
+    </div>
 
     <section class="m-5">
         <div class="addItem--form">

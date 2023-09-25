@@ -11,4 +11,7 @@ urlpatterns = [
         
     # URLs de Búsqueda
     path('pokemon_search/', views.pokemon_search_result),
+    
+    # URLs de Delete
+    path('pokemon/<pokemon>', views.delete_pokemon, name='DeletePokemon'),
 ]

@@ -13,13 +13,25 @@
 
     {% if pokemon %}
 
-    <ul>
-        {% for pokemon in pokemon %}
-            <li>Name: {{pokemon.name}}</li>
-            <li>Type: {{pokemon.type}}</li>
-            <li>Attack Power: {{pokemon.attack}}</li>
-        {% endfor %}
-    </ul>
+    <table class="table table-blur">
+        <thead>
+            <tr>
+                <th class="text-center">Pokemon Name</th>
+                <th class="text-center">Type</th>
+                <th class="text-center">Attack Power</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+            {% for pokemon in pokemon %}
+                <tr>
+                    <td class="text-center">{{pokemon.name}}</td>
+                    <td class="text-center">{{pokemon.type}}</td>
+                    <td class="text-center">{{pokemon.attack}}</td>
+                </tr>
+            {% endfor %}
+    </table>
 
     {% endif %}
 </section>
