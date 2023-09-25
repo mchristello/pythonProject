@@ -19,9 +19,7 @@ def views_pokemon(request):
             info = pokeform.cleaned_data
             print(f'This is form info {info}')
             pokemon = Pokemon(name=info["name"], type=info["type"], attack=info["attack"])
-            # pokemon.catch_date = dt.now().strftime('%A %d %b %Y, %I:%M%p')
-            print(pokemon)
-            # pokemon.save()
+            pokemon.save()
             return render(request, 'myApp/pokemon.html', {'all_pokemons': all_pokemons, 'pokeform': pokeform })
     else:
         pokeform = PokemonForm()
